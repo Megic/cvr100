@@ -53,7 +53,6 @@ const PersonInfoA = Struct({
   nationCode: ArrayType('char', 4),
   appendMsg: ArrayType('char', 72),
 });
-
 const libcvr = ffi.Library(hazardous(path.join(__dirname, './lib/cardapi3')), {
   OpenCardReader: [ 'int', [ 'int', 'int', 'int' ]],
   GetPersonMsgA: [ 'int', [ ref.refType(PersonInfoA), 'string' ]],
